@@ -75,8 +75,6 @@ async function fetchVideos() {
 
 function setupSlider() {
     const slider = document.getElementById('videoList');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
 
     if (!slider || !prevBtn || !nextBtn) return;
 
@@ -92,6 +90,17 @@ function setupSlider() {
 
 // Jalankan semua fungsi saat DOM siap
 document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.video-slider');
+
+    if (slider) {
+    slider.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+        e.preventDefault();
+        slider.scrollLeft += e.deltaY * 1.5;
+        }
+    }, { passive: false });
+    }
+    
     fetchActivityStatus();
     fetchVideos();
 });

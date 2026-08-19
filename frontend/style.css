@@ -60,7 +60,7 @@ nav {
 .nav-links a:hover { color: var(--primary); }
 
 .container {
-  max-width: 680px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 0 1.25rem;
 
@@ -68,7 +68,6 @@ nav {
   backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
   -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk kedalaman */
-  text-align: center;
 }
 
 /* Hero Section */
@@ -209,6 +208,7 @@ nav {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
   /* Menyembunyikan scrollbar bawaan */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
