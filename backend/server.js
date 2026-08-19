@@ -101,3 +101,6 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.listen(PORT, () => {
     console.log(`🚀 Server Back-End aktif di http://localhost:${PORT}`);
 });
+
+// Tambahkan baris ini di paling bawah backend/server.js
+module.exports = app;
