@@ -17,9 +17,13 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(IMG/Background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   color: var(--text);
-  padding-bottom: 2rem;
+
 }
 
 nav {
@@ -59,6 +63,12 @@ nav {
   max-width: 680px;
   margin: 0 auto;
   padding: 0 1.25rem;
+
+  background-color: rgba(19, 27, 46, 0.95);
+  backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
+  -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk kedalaman */
+  text-align: center;
 }
 
 /* Hero Section */
