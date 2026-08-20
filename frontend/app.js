@@ -1,43 +1,53 @@
 const BACKEND_URL = ''; // Cukup kosongkan agar mengikuti origin domain/localhost
 
-// 1. FETCH STATUS ACTIVITY (GAME)
-async function fetchActivityStatus() {
+// 1. FETCH STATUS ACTIVITY DISCORD (GAME)
+const DISCORD_ID = '691612004854530081'; // Contoh: '345678901234567890'
+
+async function fetchDiscordStatus() {
     const statusBadge = document.getElementById('statusBadge');
-    const gameTitle = document.getElementById('gameTitle');
-    const gameDetails = document.getElementById('gameDetails');
+  const gameTitle = document.getElementById('gameTitle');
+  const gameDetails = document.getElementById('gameDetails');
 
-    try {
-        const response = await fetch('/api/activity/now-playing');
-        const result = await response.json();
+  try {
+    const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+    const result = await response.json();
 
-        if (result.success) {
-            const { is_playing, activity } = result;
+    if (result.success && result.data) {
+      const data = result.data;
+      const gameActivity = data.activities.find(act => act.type === 0); // Type 0 = Playing Game
 
-            if (is_playing) {
-                statusBadge.textContent = '🟢 Playing Now';
-                statusBadge.className = 'badge online';
-                gameTitle.textContent = activity.game;
-                gameDetails.textContent = activity.details || 'Sedang berada di dalam game';
-            } else {
-                statusBadge.textContent = '⚪ Offline / Idle';
-                statusBadge.className = 'badge offline';
-                gameTitle.textContent = activity.game;
-                gameDetails.textContent = activity.details;
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching status:', error);
-        statusBadge.textContent = '🔴 Server Error';
-        statusBadge.className = 'badge offline';
-        gameTitle.textContent = 'Gagal terhubung ke Back-End';
+      // 1. Update Badge Status & Warna Class (online, idle, dnd, offline)
+      if (statusBadge) {
+        const status = data.discord_status;
+        statusBadge.textContent = status.toUpperCase();
+        statusBadge.className = `badge ${status}`; // Menyesuaikan class CSS (misal: badge online)
+      }
+
+      // 2. Update Judul & Detail Game
+      if (gameActivity) {
+        if (gameTitle) gameTitle.textContent = gameActivity.name;
+        if (gameDetails) gameDetails.textContent = gameActivity.details || gameActivity.state || 'Sedang dimainkan';
+      } else {
+        if (gameTitle) gameTitle.textContent = 'Tidak Sedang Bermain';
+        if (gameDetails) gameDetails.textContent = `Status Discord: ${data.discord_status.toUpperCase()}`;
+      }
+    } else {
+      if (gameTitle) gameTitle.textContent = 'User Tidak Ditemukan';
+      if (gameDetails) gameDetails.textContent = 'Pastikan sudah join server Discord Lanyard.';
     }
+  } catch (error) {
+    console.error('Error fetching Lanyard:', error);
+    if (gameTitle) gameTitle.textContent = 'Gagal Memuat Status';
+    if (gameDetails) gameDetails.textContent = 'Terjadi kesalahan koneksi API.';
+  }
 }
+
 
 // 2. FETCH YOUTUBE LATEST VIDEO
 async function fetchVideos() {
     const videoList = document.getElementById('videoList');
     if (!videoList) return;
-
+    
     try {
         const response = await fetch('/api/youtube/latest');
         const result = await response.json();
@@ -91,19 +101,20 @@ function setupSlider() {
 // Jalankan semua fungsi saat DOM siap
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.video-slider');
-
+    
     if (slider) {
-    slider.addEventListener('wheel', (e) => {
-        if (e.deltaY !== 0) {
-        e.preventDefault();
-        slider.scrollLeft += e.deltaY * 1.5;
-        }
-    }, { passive: false });
+        slider.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                slider.scrollLeft += e.deltaY * 1.5;
+            }
+        }, { passive: false });
     }
     
-    fetchActivityStatus();
+    // Jalankan saat halaman di-load
+    fetchDiscordStatus();
     fetchVideos();
 });
 
 // Auto refresh status game setiap 30 detik
-setInterval(fetchActivityStatus, 30000);
+setInterval(fetchDiscordStatus, 30000);
