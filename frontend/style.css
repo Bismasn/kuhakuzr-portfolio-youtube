@@ -17,23 +17,25 @@
 }
 
 body {
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(IMG/Background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  background-attachment: fixed;
   color: var(--text);
-
+  animation: fadeIn 0.8s ease-in-out; 
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 1rem 1.5rem;
   background-color: rgba(19, 27, 46, 0.8);
   backdrop-filter: blur(10px);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--border);
@@ -59,22 +61,50 @@ nav {
 
 .nav-links a:hover { color: var(--primary); }
 
+
+
 .container {
   max-width: 880px;
   margin: 0 auto;
   padding: 0 1.25rem;
-
+  
   background-color: rgba(19, 27, 46, 0.95);
   backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
   -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk kedalaman */
 }
-
 /* Hero Section */
 .hero {
   text-align: center;
+  margin: 45px;
   padding: 2.5rem 0 1.5rem;
 }
+/* Eksperimental lab */
+.container-lab {
+  display: flex;           /* Mengubah container menjadi flexbox */
+  flex-direction: column;  /* Menyusun elemen ke bawah (vertikal) */
+  justify-content: center; /* Memposisikan elemen di tengah secara vertikal */
+  align-items: center;     /* Memposisikan elemen di tengah secara horizontal */
+  min-height: 100vh;       /* Memastikan container minimal setinggi layar */
+  padding: 2rem;           /* Tambahkan sedikit jarak di pinggir */
+  box-sizing: border-box;
+  
+}
+.hero-lab {
+  background-color: rgba(19, 27, 46, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+
+  max-width: 750px;
+  width: 90%;
+  margin: 0 auto;
+  
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+/* Eksperimental lab */
 
 .avatar-wrapper {
   position: relative;
@@ -160,6 +190,17 @@ nav {
   box-shadow: 0 6px 20px rgba(250, 174, 43, 0.4);
 }
 
+.btn-lab{
+  background: #0077ff;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 96, 240, 0.3);
+}
+
+.btn-lab:hover {
+  background: #0077ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(23, 137, 245, 0.4);
+}
 /* Stats Grid */
 .stats-grid {
   display: grid;
@@ -353,5 +394,17 @@ footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin
 @media (min-width: 640px) {
   .video-card {
     flex: 0 0 85%;
+  }
+}
+
+/* Definisikan animasi fade in dari transparan ke jelas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Opsional: memberikan efek geser sedikit ke atas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
