@@ -61,8 +61,6 @@ nav {
 
 .nav-links a:hover { color: var(--primary); }
 
-
-
 .container {
   max-width: 880px;
   margin: 0 auto;
@@ -79,32 +77,7 @@ nav {
   margin: 45px;
   padding: 2.5rem 0 1.5rem;
 }
-/* Eksperimental lab */
-.container-lab {
-  display: flex;           /* Mengubah container menjadi flexbox */
-  flex-direction: column;  /* Menyusun elemen ke bawah (vertikal) */
-  justify-content: center; /* Memposisikan elemen di tengah secara vertikal */
-  align-items: center;     /* Memposisikan elemen di tengah secara horizontal */
-  min-height: 100vh;       /* Memastikan container minimal setinggi layar */
-  padding: 2rem;           /* Tambahkan sedikit jarak di pinggir */
-  box-sizing: border-box;
-  
-}
-.hero-lab {
-  background-color: rgba(19, 27, 46, 0.96);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
 
-  max-width: 750px;
-  width: 90%;
-  margin: 0 auto;
-  
-  text-align: center;
-  padding: 2.5rem 2rem;
-}
-
-/* Eksperimental lab */
 
 .avatar-wrapper {
   position: relative;

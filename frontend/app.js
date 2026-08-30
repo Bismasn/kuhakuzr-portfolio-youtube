@@ -3,6 +3,7 @@ const BACKEND_URL = ''; // Cukup kosongkan agar mengikuti origin domain/localhos
 // 1. FETCH STATUS ACTIVITY DISCORD (GAME)
 const DISCORD_ID = '691612004854530081'; // Contoh: '345678901234567890'
 
+
 async function fetchDiscordStatus() {
     const statusBadge = document.getElementById('statusBadge');
   const gameTitle = document.getElementById('gameTitle');
