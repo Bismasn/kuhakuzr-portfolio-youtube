@@ -95,8 +95,13 @@ app.get('/api/activity/now-playing', async (req, res) => {
 // =========================================================
 // 3. STATIC FILES FRONTEND
 // =========================================================
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '../frontend'), {
+    extensions: ['html']
+}));
 
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 // Jalankan Server
 app.listen(PORT, () => {
     console.log(`🚀 Server Back-End aktif di http://localhost:${PORT}`);

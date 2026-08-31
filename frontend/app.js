@@ -2,7 +2,28 @@ const BACKEND_URL = ''; // Cukup kosongkan agar mengikuti origin domain/localhos
 
 // 1. FETCH STATUS ACTIVITY DISCORD (GAME)
 const DISCORD_ID = '691612004854530081'; // Contoh: '345678901234567890'
+const menuLinks = document.querySelectorAll('.nav-links a');
 
+
+menuLinks.forEach(Link => {
+    Link.addEventListener('click', function(e) {
+        const hrefAtribut = this.getAttribute('href');
+
+        if (hrefAtribut && hrefAtribut.startsWith('#')) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+    
+            if (targetSection) {
+                targetSection.scrollIntoView({behavior: 'smooth'});
+    
+                history.pushState(null, null, '/' + targetId);
+            }
+        }
+    });
+
+});
 
 async function fetchDiscordStatus() {
     const statusBadge = document.getElementById('statusBadge');

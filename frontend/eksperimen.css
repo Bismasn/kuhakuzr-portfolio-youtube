@@ -1,16 +1,25 @@
 /* Eksperimental lab */
 .container-lab {
-  display: flex;           /* Mengubah container menjadi flexbox */
-  flex-direction: column;  /* Menyusun elemen ke bawah (vertikal) */
-  justify-content: center; /* Memposisikan elemen di tengah secara vertikal */
-  align-items: center;     /* Memposisikan elemen di tengah secara horizontal */
-  min-height: 100vh;       /* Memastikan container minimal setinggi layar */
-  padding: 2rem;           /* Tambahkan sedikit jarak di pinggir */
-  box-sizing: border-box;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(19, 27, 46, 0.95);
+  backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
+  -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk kedalaman */
   
 }
+
+.btn-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .hero-lab {
-  background-color: rgba(19, 27, 46, 0.96);
+  /* background-color: rgba(19, 27, 46, 0.96);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -19,7 +28,10 @@
   margin: 0 auto;
   
   text-align: center;
-  padding: 2.5rem 2rem;
+   padding: 2.5rem 2rem; */
+  text-align: center;
+  margin: 45px;
+  padding: 2.5rem 0 1.5rem;
 }
 
 /* Eksperimental lab */
