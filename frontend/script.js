@@ -8,12 +8,12 @@ if (mobileMenu && navLinks) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     
-        if (navLink.classList.contains('active')) {
+        if (navLinks.classList.contains('active')) {
             menuIcon.classList.remove('fa-bars');
             menuIcon.classList.add('fa-xmark');
         } else {
             menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa_bars');
+            menuIcon.classList.add('fa-bars');
         }
     });
 }

@@ -35,12 +35,20 @@
   color: #ffffff;    /* Mengatur warna ikon */
 }
 
+.nav-links {
+  
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -51,13 +59,41 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     align-items:center;
-  }
 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+  }
+  
   .nav-links.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .nav-links a {
     padding: 10px 0;
+  }
+}
+
+@media  (min-width: 768px) {
+
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: none;
+    padding: 0;
+    width: auto;
+  }
+  
+  .menu-toggle {
+    display: none;
   }
 }
