@@ -3,14 +3,13 @@
   max-width: 880px;
   margin: 0 auto;
   padding: 0 1.25rem;
-  
+
   justify-content: center;
   align-items: center;
   background-color: rgba(19, 27, 46, 0.95);
   backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
   -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk kedalaman */
-  
 }
 
 .btn-dashboard {
@@ -44,15 +43,14 @@
 
 .menu-toggle i {
   font-size: 1.5rem; /* Mengatur ukuran besar kecil ikon */
-  color: #ffffff;    /* Mengatur warna ikon */
+  color: #ffffff; /* Mengatur warna ikon */
 }
 
 .nav-links {
-  
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -70,14 +68,17 @@
     padding: 1rem 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    align-items:center;
+    align-items: center;
 
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
-    transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
   }
-  
+
   .nav-links.active {
     opacity: 1;
     visibility: visible;
@@ -89,8 +90,7 @@
   }
 }
 
-@media  (min-width: 768px) {
-
+@media (min-width: 768px) {
   .nav-links {
     position: static;
     flex-direction: row;
@@ -104,7 +104,7 @@
     padding: 0;
     width: auto;
   }
-  
+
   .menu-toggle {
     display: none;
   }

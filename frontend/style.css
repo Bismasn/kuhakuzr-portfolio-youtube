@@ -13,18 +13,20 @@
   padding: 0;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(IMG/Background.png);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(IMG/Background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: var(--text);
-  animation: fadeIn 0.8s ease-in-out; 
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 nav {
@@ -59,13 +61,15 @@ nav {
   transition: 0.2s;
 }
 
-.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover {
+  color: var(--primary);
+}
 
 .container {
   max-width: 880px;
   margin: 0 auto;
   padding: 0 1.25rem;
-  
+
   background-color: rgba(19, 27, 46, 0.95);
   backdrop-filter: blur(10px); /* Efek buram 10 pixel di belakang wadah ini */
   -webkit-backdrop-filter: blur(10px); /* Cadangan untuk Safari */
@@ -77,7 +81,6 @@ nav {
   margin: 45px;
   padding: 2.5rem 0 1.5rem;
 }
-
 
 .avatar-wrapper {
   position: relative;
@@ -105,10 +108,22 @@ nav {
   border-radius: 12px;
 }
 
-.hero h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
-.tagline { color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
-.bio { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; }
-
+.hero h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+.tagline {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+.bio {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
 
 /* Container Tombol Aksi */
 .action-buttons {
@@ -163,7 +178,7 @@ nav {
   box-shadow: 0 6px 20px rgba(250, 174, 43, 0.4);
 }
 
-.btn-lab{
+.btn-lab {
   background: #0077ff;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 96, 240, 0.3);
@@ -190,15 +205,20 @@ nav {
   text-align: center;
 }
 
-.stat-item h3 { color: var(--text); font-size: 1.25rem; }
-.stat-item p { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.2rem; }
+.stat-item h3 {
+  color: var(--text);
+  font-size: 1.25rem;
+}
+.stat-item p {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
 
 /* Activity & Card Sections */
 .card-section {
   margin-bottom: 2rem;
 }
-
-
 
 .section-header {
   display: flex;
@@ -259,8 +279,13 @@ nav {
   object-fit: cover; /* agar tidak terdistorsi */
 }
 
-.section-title { font-size: 1.1rem; margin-bottom: 1rem; }
-.section-header .section-title { margin-bottom: 0; }
+.section-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.section-header .section-title {
+  margin-bottom: 0;
+}
 
 .activity-box {
   background: var(--card-bg);
@@ -336,7 +361,11 @@ nav {
 }
 
 /* Quick Links */
-.links-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
 .link-item {
   display: flex;
@@ -350,7 +379,9 @@ nav {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: transform 0.2s, border-color 0.2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
 }
 
 .link-item:hover {
@@ -358,10 +389,21 @@ nav {
   border-color: var(--primary);
 }
 
-.link-left { display: flex; align-items: center; gap: 0.75rem; }
-.arrow-icon { color: var(--text-muted); }
+.link-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.arrow-icon {
+  color: var(--text-muted);
+}
 
-footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 2rem; }
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
 
 /* Tampilan di Layar Desktop (Menampilkan 1 full card + sedikit intipan card berikutnya) */
 @media (min-width: 640px) {
@@ -374,7 +416,9 @@ footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px); /* Opsional: memberikan efek geser sedikit ke atas */
+    transform: translateY(
+      10px
+    ); /* Opsional: memberikan efek geser sedikit ke atas */
   }
   to {
     opacity: 1;

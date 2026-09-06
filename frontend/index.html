@@ -1,93 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KuhakuZr - Personal Branding Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KuhakuZr - Personal Branding Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <nav>
+      <a href="/" class="brand-logo">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ff0055"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+          ></path>
+          <polygon
+            points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+          ></polygon>
+        </svg>
+        KuhakuZr
+      </a>
+      <div class="nav-links">
+        <a href="#activity">Activity</a>
+        <a href="#videos">Video</a>
+        <a href="#links">Links</a>
+      </div>
+    </nav>
 
-  <!-- Top Navigation -->
-  <nav>
-    <a href="/" class="brand-logo">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff0055" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-      KuhakuZr
-    </a>
-    <div class="nav-links">
-      <a href="#activity">Activity</a>
-      <a href="#videos">Video</a>
-      <a href="#links">Links</a>
-    </div>
-  </nav>
-  
-  <div class="container">
-
-    <!-- Hero Profile Section -->
-    <section class="hero">
-      <div class="avatar-wrapper">
-        <img src="/IMG/Logo.png" alt="Profile Picture" class="avatar-img" onerror="this.src='https://via.placeholder.com/96'">
-        <span class="badge-live">LiveStreamer</span>
-      </div>
-      <h1>KuhakuZr</h1>
-      <p class="tagline">Gamer & Creative Studio</p>
-      <p class="bio">
-        Berbagi tutorial seputar Minecraft, Survival Minecraft, dan Tips And Trik Minecraft. Kadang Main Game Lain.
-      </p>
-
-      <div class="cta-group">
-        <a href="https://www.youtube.com/channel/UC1AiqgPc0MmWF0MPoRX0Lhw" target="_blank" class="btn btn-subscribe">
-          <i class="fab fa-youtube"></i>
-          Subscribe YouTube
-        </a>
-        <!-- Ganti link ini dengan link Saweria / Trakteer kamu -->
-        <a href="https://saweria.co/KuhakuZr" target="_blank" class="btn btn-donate">
-          ☕ Dukung / Donate
-        </a>
-        <a class="btn btn-lab" href="/eksperimental">
-          🔬 Lab Eksperimental
-        </a>
-      </div>
-    </section>
-
-    <!-- Channel Stats Grid -->
-    <div class="stats-grid">
-      <div class="stat-item">
-        <h3>7K+</h3>
-        <p>Subscribers</p>
-      </div>
-      <div class="stat-item">
-        <h3>400+</h3>
-        <p>Videos</p>
-      </div>
-      <div class="stat-item">
-        <h3>1.2M</h3>
-        <p>Views</p>
-      </div>
-    </div>
-
-    <!-- Live Activity Section -->
-    <section id="activity" class="card-section">
-      <div class="section-header">
-        <h2 class="section-title">🎮 Status Aktivitas</h2>
-        <span id="statusBadge" class="badge offline">Checking...</span>
-      </div>
-      <div class="activity-box">
-        <h3 id="gameTitle">Memuat data game...</h3>
-        <p id="gameDetails" class="text-muted">Sedang mengecek status...</p>
-      </div>
-    </section>
-
-    <!-- Dynamic Featured Video Section -->
-    <section id="videos" class="card-section">
-        <div class="section-header">
-            <h2 class="section-title">Video Terbaru</h2>
+    <div class="container">
+      <!-- Hero Profile Section -->
+      <section class="hero">
+        <div class="avatar-wrapper">
+          <img
+            src="/IMG/Logo.png"
+            alt="Profile Picture"
+            class="avatar-img"
+            onerror="this.src = 'https://via.placeholder.com/96'"
+          />
+          <span class="badge-live">LiveStreamer</span>
         </div>
-          
+        <h1>KuhakuZr</h1>
+        <p class="tagline">Gamer & Creative Studio</p>
+        <p class="bio">
+          Berbagi tutorial seputar Minecraft, Survival Minecraft, dan Tips And
+          Trik Minecraft. Kadang Main Game Lain.
+        </p>
+
+        <div class="cta-group">
+          <a
+            href="https://www.youtube.com/channel/UC1AiqgPc0MmWF0MPoRX0Lhw"
+            target="_blank"
+            class="btn btn-subscribe"
+          >
+            <i class="fab fa-youtube"></i>
+            Subscribe YouTube
+          </a>
+          <!-- Ganti link ini dengan link Saweria / Trakteer kamu -->
+          <a
+            href="https://saweria.co/KuhakuZr"
+            target="_blank"
+            class="btn btn-donate"
+          >
+            ☕ Dukung / Donate
+          </a>
+          <a class="btn btn-lab" href="/eksperimental">
+            🔬 Lab Eksperimental
+          </a>
+        </div>
+      </section>
+
+      <!-- Channel Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>7K+</h3>
+          <p>Subscribers</p>
+        </div>
+        <div class="stat-item">
+          <h3>400+</h3>
+          <p>Videos</p>
+        </div>
+        <div class="stat-item">
+          <h3>1.2M</h3>
+          <p>Views</p>
+        </div>
+      </div>
+
+      <!-- Live Activity Section -->
+      <section id="activity" class="card-section">
+        <div class="section-header">
+          <h2 class="section-title">🎮 Status Aktivitas</h2>
+          <span id="statusBadge" class="badge offline">Checking...</span>
+        </div>
+        <div class="activity-box">
+          <h3 id="gameTitle">Memuat data game...</h3>
+          <p id="gameDetails" class="text-muted">Sedang mengecek status...</p>
+        </div>
+      </section>
+
+      <!-- Dynamic Featured Video Section -->
+      <section id="videos" class="card-section">
+        <div class="section-header">
+          <h2 class="section-title">Video Terbaru</h2>
+        </div>
+
         <!-- Container Slider -->
         <div class="video-slider-container">
           <div id="videoList" class="video-slider">
@@ -95,51 +129,54 @@
             <!-- Card Video dari JavaScript akan di-render di sini -->
           </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Quick Links Section -->
-    <section id="links" class="card-section">
-      <h2 class="section-title">Tautan Ringkas</h2>
-      <div class="links-list">
-        <a href="https://www.Instagram.com/kuhakuzr" class="link-item">
-          <div class="link-left">
-            <span class="link-icon">📸</span>
-            <span>Instagram Official</span>
-          </div>
-          <span class="arrow-icon">➔</span>
-        </a>
-        <a href="https://www.tiktok.com/@kuhakuzr" class="link-item">
-          <div class="link-left">
-            <span class="link-icon">🎶</span>
-            <span>Tiktok Official</span>
-          </div>
-          <span class="arrow-icon">➔</span>
-        </a>
-        <!-- <a href="#" class="link-item">
+      <!-- Quick Links Section -->
+      <section id="links" class="card-section">
+        <h2 class="section-title">Tautan Ringkas</h2>
+        <div class="links-list">
+          <a href="https://www.Instagram.com/kuhakuzr" class="link-item">
+            <div class="link-left">
+              <span class="link-icon">📸</span>
+              <span>Instagram Official</span>
+            </div>
+            <span class="arrow-icon">➔</span>
+          </a>
+          <a href="https://www.tiktok.com/@kuhakuzr" class="link-item">
+            <div class="link-left">
+              <span class="link-icon">🎶</span>
+              <span>Tiktok Official</span>
+            </div>
+            <span class="arrow-icon">➔</span>
+          </a>
+          <!-- <a href="#" class="link-item">
           <div class="link-left">
             <span class="link-icon">💼</span>
             <span>LinkedIn Portfolio</span>
           </div>
           <span class="arrow-icon">➔</span>
         </a> -->
-        <a href="https://discord.gg/VTJYfvZmt" class="link-item" target="_blank">
-          <div class="link-left">
-            <span class="link-icon">💬</span>
-            <span>Join Komunitas Discord</span>
-          </div>
-          <span class="arrow-icon">➔</span>
-        </a>
-      </div>
-    </section>
+          <a
+            href="https://discord.gg/VTJYfvZmt"
+            class="link-item"
+            target="_blank"
+          >
+            <div class="link-left">
+              <span class="link-icon">💬</span>
+              <span>Join Komunitas Discord</span>
+            </div>
+            <span class="arrow-icon">➔</span>
+          </a>
+        </div>
+      </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>© Copyright 2026 KuhakuZr.</p>
-      <!--  Built with Node.js & REST API Sync. -->
-    </footer>
+      <!-- Footer -->
+      <footer>
+        <p>© Copyright 2026 KuhakuZr.</p>
+        <!--  Built with Node.js & REST API Sync. -->
+      </footer>
+    </div>
 
-  </div>
-
-  <script src="/app.js"></script>
-</body>
+    <script src="/app.js"></script>
+  </body>
 </html>
